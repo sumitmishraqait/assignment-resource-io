@@ -2,8 +2,6 @@ package com.qainfotech.tap.training.resourceio;
 
 import com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException;
 import com.qainfotech.tap.training.resourceio.model.Individual;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import static org.assertj.core.api.Assertions.*;
 import org.testng.annotations.BeforeTest;
@@ -38,7 +36,7 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects() throws FileNotFoundException, IOException{
+    public void getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects(){
         
         assertThat(teamReader.getListOfActiveIndividuals().size()).isEqualTo(4);
         for(Individual individual:teamReader.getListOfActiveIndividuals()){
@@ -47,7 +45,7 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects() throws FileNotFoundException, IOException{
+    public void getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects(){
         
         assertThat(teamReader.getListOfInactiveIndividuals().size()).isEqualTo(1);
         for(Individual individual:teamReader.getListOfInactiveIndividuals()){
@@ -88,7 +86,7 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void getListOfTeams_should_return_a_list_if_Team_object_from_db_json() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
+    public void getListOfTeams_should_return_a_list_if_Team_object_from_db_json(){
         
         assertThat(teamReader.getListOfTeams().size()).isEqualTo(2);
         assertThat(teamReader.getListOfTeams().get(0).getId()).isEqualTo(1001);
@@ -104,7 +102,7 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
+    public void Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active(){
         assertThat(teamReader.getListOfTeams().get(0).getActiveMembers().size())
                 .isEqualTo(2);
         assertThat(teamReader.getListOfTeams().get(1).getActiveMembers().size())
@@ -112,7 +110,7 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
+    public void Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive(){
         assertThat(teamReader.getListOfTeams().get(0).getInactiveMembers()
                 .size()).isEqualTo(1);
         assertThat(teamReader.getListOfTeams().get(0).getInactiveMembers()

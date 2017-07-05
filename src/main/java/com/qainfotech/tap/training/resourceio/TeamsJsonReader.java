@@ -1,225 +1,217 @@
 package com.qainfotech.tap.training.resourceio;
 
-import com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException;
-import com.qainfotech.tap.training.resourceio.model.Individual;
-import com.qainfotech.tap.training.resourceio.model.Team;
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException;
+import com.qainfotech.tap.training.resourceio.model.Individual;
+import com.qainfotech.tap.training.resourceio.model.Team;
 
 /**
  *
  * @author Ramandeep RamandeepSingh AT QAInfoTech.com
  */
-public class TeamsJsonReader {
-
-	List<Individual> individualList = new ArrayList<Individual>();
-	List<Individual> inactiveIndObjList = new ArrayList<Individual>();
-	List<Individual> activeIndObjList = new ArrayList<Individual>();
-	JSONParser parser = new JSONParser();
-
-	public List<Individual> getListOfIndividuals() throws FileNotFoundException, IOException {
-
-		individualList.clear();
-		JSONObject mainJsonObj = null;
-		try {
-			mainJsonObj = (JSONObject) parser.parse(new FileReader("src/main/resources/db.json"));
-		} catch (Exception e) {
-			e.printStackTrace();
+public class TeamsJsonReader{
+	private JSONObject jsonObj;
+	private List<Individual> individualList;
+	private List<Individual> inactiveMembers;
+	private List<Individual> activeMembers;
+	JSONParser parser=new JSONParser();
+    /**
+     * get a list of individual objects from db json file
+     * 
+     * @return 
+     * @throws  
+     */
+	public TeamsJsonReader() {
+		// TODO Auto-generated constructor stub
+		
+		try
+		{
+		JSONParser parser=new JSONParser();
+		FileReader reader=new FileReader(new File("D:\\eclipse\\assignment4\\src\\main\\resources\\db.json"));
+		jsonObj=(JSONObject)parser.parse(reader);
 		}
-
-		JSONArray individualjsArray = (JSONArray) mainJsonObj.get("individuals");
-
-		Individual tempObject;
-		JSONObject innerJson;
-
-		for (int index = 0; index < individualjsArray.size(); index++) {
-
-			innerJson = (JSONObject) individualjsArray.get(index);
-
-			Map<String, Object> individualMap = new HashMap();
-			individualMap.put("name", innerJson.get("name").toString().trim());
-			individualMap.put("id", innerJson.get("id").toString().trim());
-			individualMap.put("active", innerJson.get("active").toString().trim());
-
-			tempObject = new Individual(individualMap);
-
-			try {
-				individualList.add(tempObject);
-
-			} catch (Exception ex) {
-				ex.printStackTrace();
-			}
-
+		catch(IOException |ParseException ex){
+			ex.printStackTrace();
 		}
-		return individualList;
-
+		
 	}
+	
+    public List<Individual> getListOfIndividuals(){
+       // throw new UnsupportedOperationException("Not implemented.");
+    	
+    		
+     	individualList=new ArrayList<>();
+    	JSONArray individualJsonArray=(JSONArray) jsonObj.get("individuals");    	
+    	for(int i=0;i<individualJsonArray.size();i++){
+    		JSONObject ob=(JSONObject)individualJsonArray.get(i);    		
+    		Map<String,Object> map=(Map<String, Object>) ob.clone();
+    		Individual individual=new Individual(map);
+    		individualList.add(individual);   		
+    	}
+    	return individualList;
+    	
+    }
+    
+    /**
+     * get individual object by id
+     * 
+     * @param id individual id
+     * @return 
+     * @throws com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException 
+     */
+    public Individual getIndividualById(Integer id) throws ObjectNotFoundException{
+        //throw new UnsupportedOperationException("Not implemented.");
+       
+    	individualList=getListOfIndividuals();
+    	Iterator<Individual>itr=individualList.iterator();
+    	Individual individual=null;
+    	while(itr.hasNext()){
+    		 individual=itr.next();
+    		if(individual.getId()==id.intValue()){
+    		    			return individual;
+    		}    			
+    	}
+    	throw new ObjectNotFoundException("object not found", "Id", id.toString());
+    	    	
+    }
+    
+    /**
+     * get individual object by name
+     * 
+     * @param name
+     * @return 
+     * @throws com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException 
+     */
+    public Individual getIndividualByName(String name) throws ObjectNotFoundException{
+       // throw new UnsupportedOperationException("Not implemented.");
+    	individualList=getListOfIndividuals();
+    	Iterator<Individual>itr=individualList.iterator();
+    	Individual individual=null;
+    	while(itr.hasNext()){
+    		 individual=itr.next();
+    		if(individual.getName().equalsIgnoreCase(name)){
+    			
+    			return individual;
+    			
+    		}
+    			
+    	}
+    	
+    	throw new ObjectNotFoundException("object not found", "name" ,name);
+    }
+    
+    
+    /**
+     * get a list of individual objects who are not active
+     * 
+     * @return List of inactive individuals object
+     */
+    public List<Individual> getListOfInactiveIndividuals(){
+        //throw new UnsupportedOperationException("Not implemented.");
+    	individualList=getListOfIndividuals();
+    	Iterator<Individual>itr=individualList.iterator();
+         inactiveMembers=new ArrayList<>();
+    	Individual individual=null;
+    	while(itr.hasNext()){
+    		 individual=itr.next();
+    		if(!(individual.isActive()))
+    			inactiveMembers.add(individual);
+    	}
+    	return inactiveMembers;
+    }
+    
+    /**
+     * get a list of individual objects who are active
+     * 
+     * @return List of active individuals object
+     */
+    public List<Individual> getListOfActiveIndividuals(){
+        //throw new UnsupportedOperationException("Not implemented.");
+    	individualList=getListOfIndividuals();
+    	Iterator<Individual>itr=individualList.iterator();
+    	activeMembers=new ArrayList<>();
+    	Individual individual=null;
+    	while(itr.hasNext()){
+    		 individual=itr.next();
+    		if(individual.isActive())
+    			activeMembers.add(individual);
+    	}
+    	return activeMembers;
+    }
+    
+    /**
+     * get a list of team objects from db json
+     * 
+     * @return 
+     */
+    public List<Team> getListOfTeams(){
+    	List<Team> teamList = new ArrayList<>();
+		// Converting .json file data into a Map
 
-	/**
-	 * get individual object by id
-	 * 
-	 * @param id
-	 *            individual id
-	 * @return
-	 * @throws com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException
-	 */
-	public Individual getIndividualById(Integer id) throws ObjectNotFoundException {
+		JSONArray teams = (JSONArray) jsonObj.get("teams");
 
-		for (int index = 0; index < this.individualList.size(); index++) {
+		for (int i = 0; i < teams.size(); i++) {
+			JSONObject ob = (JSONObject) teams.get(i);
+			// Fetch id,name and mamber  data of team from .json file
+			Integer id = ((Long) ob.get("id")).intValue();
+			String name = ob.get("name").toString();
 
-			if ((int) this.individualList.get(index).getId() == (int) id) {
+		
+			JSONArray mem = (JSONArray) ob.get("members");
+            
+			
+			// variable list contain list of Team Members data
+			List<Individual> list = new ArrayList();
 
-				return this.individualList.get(index);
+			for (int j = 0; j < mem.size(); j++) {
+				Integer id1 = ((Long) mem.get(j)).intValue();
 
-			}
-
-		}
-
-		throw new ObjectNotFoundException("IndividualByname", id.toString(), null);
-
-	}
-
-	/**
-	 * get individual object by name
-	 * 
-	 * @param name
-	 * @return
-	 * @throws com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException
-	 */
-	public Individual getIndividualByName(String name) throws ObjectNotFoundException {
-
-		for (int index = 0; index < this.individualList.size(); index++) {
-
-			if (this.individualList.get(index).getName().equals(name)) {
-
-				return this.individualList.get(index);
-
-			}
-
-		}
-		throw new ObjectNotFoundException("IndividualByname", name, name);
-	}
-
-	/**
-	 * get a list of individual objects who are not active
-	 * 
-	 * @return List of inactive individuals object
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-
-	public List<Individual> getListOfInactiveIndividuals() throws FileNotFoundException, IOException {
-
-		if (individualList.isEmpty()) {
-			individualList = this.getListOfIndividuals();
-		}
-
-		inactiveIndObjList.clear();
-
-		for (int index = 0; index < this.individualList.size(); index++) {
-
-			if (this.individualList.get(index).isActive() == false) {
-
-				inactiveIndObjList.add(this.individualList.get(index));
-			}
-		}
-
-		return inactiveIndObjList;
-
-	}
-
-	/**
-	 * get a list of individual objects who are active
-	 * 
-	 * @return List of active individuals object
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 */
-	public List<Individual> getListOfActiveIndividuals() throws FileNotFoundException, IOException {
-
-		if (inactiveIndObjList.isEmpty()) {
-			individualList = this.getListOfIndividuals();
-		}
-
-		activeIndObjList.clear();
-
-		for (int index = 0; index < this.individualList.size(); index++) {
-
-			if (this.individualList.get(index).isActive() == true) {
-
-				activeIndObjList.add(this.individualList.get(index));
-			}
-		}
-
-		return activeIndObjList;
-
-	}
-
-	List<Team> teamObjList = new ArrayList<Team>();
-
-	/**
-	 * get a list of team objects from db json
-	 * 
-	 * @return
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 * @throws ObjectNotFoundException
-	 * @throws NumberFormatException
-	 */
-	public List<Team> getListOfTeams()
-			throws FileNotFoundException, IOException, NumberFormatException, ObjectNotFoundException {
-		JSONObject mainJsObj = null;
-
-		teamObjList.clear();
-
-		try {
-			mainJsObj = (JSONObject) parser.parse(new FileReader("src/main/resources/db.json"));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		if (individualList.isEmpty()) {
-			individualList = this.getListOfIndividuals();
-		}
-
-		JSONArray teamJsArray = (JSONArray) mainJsObj.get("teams");
-
-		JSONObject myobj;
-
-		for (int index = 0; index < teamJsArray.size(); index++) {
-
-			myobj = (JSONObject) teamJsArray.get(index);
-
-			Map<String, Object> TeamMap = new HashMap();
-			TeamMap.put("name", myobj.get("name").toString().trim());
-			TeamMap.put("id", myobj.get("id").toString().trim());
-
-			JSONArray team_members = (JSONArray) myobj.get("members");
-			List<Individual> memberIndividuals = new ArrayList<>();
-			for (int i = 0; i < team_members.size(); i++) {
-
-				memberIndividuals.add(this.getIndividualById(Integer.parseInt(team_members.get(i).toString())));
+				Individual individual;
+				try {
+					individual = getIndividualById(id1);
+					list.add(individual);
+				} catch (ObjectNotFoundException e) {
+					
+					e.printStackTrace();
+				}
 
 			}
+			
+			// putting data into map
+			Map<String, Object> map = new HashMap();
+			map.put("id", id);
+			map.put("name", name);
+			map.put("members", list);
 
-			TeamMap.put("memberobject", memberIndividuals);
-
-			Team tempObj = new Team(TeamMap);
-			teamObjList.add(tempObj);
-
+			Team team = new Team(map);
+			teamList.add(team);
 		}
 
-		return teamObjList;
-
-	}
-
+		return teamList; 
+    	//JSONObject jsonObj=JSONLoader();
+    /*	List<Team> teamList=new ArrayList<>();
+    	Team team=null;
+    	JSONArray teamArray=(JSONArray)jsonObj.get("teams");
+    	for(int i=0;i<teamArray.size();i++){
+    	  JSONObject object=(JSONObject) teamArray.get(i);
+    	  Map<String, Object> map=(Map<String, Object>) object.clone();    	 
+    	  team=new Team(map);
+    	  teamList.add(team);
+    	}
+    	return teamList;
+    */	    	 //throw new UnsupportedOperationException("Not implemented.");
+    }
 }

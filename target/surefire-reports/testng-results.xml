@@ -2,54 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="22" passed="22">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="247" started-at="2017-07-05T04:50:46Z" finished-at="2017-07-05T04:50:46Z">
+  <suite name="Command line suite" duration-ms="269" started-at="2017-07-05T05:45:36Z" finished-at="2017-07-05T05:45:36Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="247" started-at="2017-07-05T04:50:46Z" finished-at="2017-07-05T04:50:46Z">
-      <class name="com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest">
-        <test-method status="PASS" signature="loadOptions()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@4c203ea1]" name="loadOptions" is-config="true" duration-ms="7" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadOptions -->
-        <test-method status="PASS" signature="loadDB()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="loadDB" is-config="true" duration-ms="5" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadDB -->
-        <test-method status="PASS" signature="loadDB()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="loadDB" is-config="true" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadDB -->
-        <test-method status="PASS" signature="addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@4c203ea1]" name="addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty" duration-ms="56" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty -->
-        <test-method status="PASS" signature="getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@4c203ea1]" name="getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile" duration-ms="1" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile -->
-      </class> <!-- com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest -->
+    <test name="Command line test" duration-ms="269" started-at="2017-07-05T05:45:36Z" finished-at="2017-07-05T05:45:36Z">
       <class name="com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest">
-        <test-method status="PASS" signature="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active" duration-ms="6" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active" duration-ms="3" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active -->
-        <test-method status="PASS" signature="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive" duration-ms="3" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive" duration-ms="3" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive -->
-        <test-method status="PASS" signature="getIndividualById_should_return_Individual_object_matching_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getIndividualById_should_return_Individual_object_matching_id" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualById_should_return_Individual_object_matching_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getIndividualById_should_return_Individual_object_matching_id" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualById_should_return_Individual_object_matching_id -->
-        <test-method status="PASS" signature="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id" duration-ms="0" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <exception class="com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException">
             <message>
-              <![CDATA[IndividualByname Object with 100=null not found]]>
+              <![CDATA[object not found Object with Id=100 not found]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: IndividualByname Object with 100=null not found
+              <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: object not found Object with Id=100 not found
 	at com.qainfotech.tap.training.resourceio.TeamsJsonReader.getIndividualById(TeamsJsonReader.java:87)
-	at com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest.getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id(TeamsJsonReaderTest.java:71)
+	at com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest.getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id(TeamsJsonReaderTest.java:69)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -91,19 +69,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id -->
-        <test-method status="PASS" signature="getIndividualByName_should_return_Individual_object_matching_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getIndividualByName_should_return_Individual_object_matching_name" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualByName_should_return_Individual_object_matching_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getIndividualByName_should_return_Individual_object_matching_name" duration-ms="0" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualByName_should_return_Individual_object_matching_name -->
-        <test-method status="PASS" signature="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <exception class="com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException">
             <message>
-              <![CDATA[IndividualByname Object with Individual By This Name Does Not Exist=Individual By This Name Does Not Exist not found]]>
+              <![CDATA[object not found Object with name=Individual By This Name Does Not Exist not found]]>
             </message>
             <full-stacktrace>
-              <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: IndividualByname Object with Individual By This Name Does Not Exist=Individual By This Name Does Not Exist not found
-	at com.qainfotech.tap.training.resourceio.TeamsJsonReader.getIndividualByName(TeamsJsonReader.java:109)
-	at com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest.getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name(TeamsJsonReaderTest.java:87)
+              <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: object not found Object with name=Individual By This Name Does Not Exist not found
+	at com.qainfotech.tap.training.resourceio.TeamsJsonReader.getIndividualByName(TeamsJsonReader.java:113)
+	at com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest.getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name(TeamsJsonReaderTest.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -145,41 +123,67 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name -->
-        <test-method status="PASS" signature="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects" duration-ms="1" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects" duration-ms="0" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects -->
-        <test-method status="PASS" signature="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects" duration-ms="1" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects" duration-ms="0" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects -->
-        <test-method status="PASS" signature="getListOfIndividuals_should_return_array_list_of_all_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getListOfIndividuals_should_return_array_list_of_all_individual_objects" duration-ms="2" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfIndividuals_should_return_array_list_of_all_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getListOfIndividuals_should_return_array_list_of_all_individual_objects" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfIndividuals_should_return_array_list_of_all_individual_objects -->
-        <test-method status="PASS" signature="getListOfTeams_should_return_a_list_if_Team_object_from_db_json()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@27f674d]" name="getListOfTeams_should_return_a_list_if_Team_object_from_db_json" duration-ms="2" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfTeams_should_return_a_list_if_Team_object_from_db_json()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="getListOfTeams_should_return_a_list_if_Team_object_from_db_json" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfTeams_should_return_a_list_if_Team_object_from_db_json -->
       </class> <!-- com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest -->
+      <class name="com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest">
+        <test-method status="PASS" signature="loadOptions()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@49e4cb85]" name="loadOptions" is-config="true" duration-ms="9" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadOptions -->
+        <test-method status="PASS" signature="loadDB()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsJsonReaderTest@2133c8f8]" name="loadDB" is-config="true" duration-ms="6" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadDB -->
+        <test-method status="PASS" signature="loadDB()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="loadDB" is-config="true" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadDB -->
+        <test-method status="PASS" signature="addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@49e4cb85]" name="addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty" duration-ms="58" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addOptionShouldMethodShouldAppendPropertiesFileWithNewProperty -->
+        <test-method status="PASS" signature="getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile()[pri:0, instance:com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest@49e4cb85]" name="getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getOptionValueMethodShouldReturnOptionValuesFromPropertiesFile -->
+      </class> <!-- com.qainfotech.tap.training.resourceio.PropertiesOptionsIOTest -->
       <class name="com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest">
-        <test-method status="PASS" signature="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active" duration-ms="48" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active" duration-ms="67" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active -->
-        <test-method status="PASS" signature="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive" duration-ms="13" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive" duration-ms="30" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive -->
-        <test-method status="PASS" signature="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id" duration-ms="1" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualById_should_return_Individual_object_matching_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getIndividualById_should_return_Individual_object_matching_id" duration-ms="2" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getIndividualById_should_return_Individual_object_matching_id -->
+        <test-method status="PASS" signature="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id" duration-ms="2" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <exception class="com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException">
             <message>
               <![CDATA[Individual Object with id=100 not found]]>
             </message>
             <full-stacktrace>
               <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: Individual Object with id=100 not found
-	at com.qainfotech.tap.training.resourceio.TeamsYamlReader.getIndividualById(TeamsYamlReader.java:120)
-	at com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest.getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id(TeamsYamlReaderTest.java:72)
+	at com.qainfotech.tap.training.resourceio.TeamsYamlReader.getIndividualById(TeamsYamlReader.java:76)
+	at com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest.getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id(TeamsYamlReaderTest.java:69)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -221,23 +225,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id -->
-        <test-method status="PASS" signature="getIndividualById_should_return_Individual_object_matching_id()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getIndividualById_should_return_Individual_object_matching_id" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getIndividualById_should_return_Individual_object_matching_id -->
-        <test-method status="PASS" signature="getIndividualByName_should_return_Individual_object_matching_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getIndividualByName_should_return_Individual_object_matching_name" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualByName_should_return_Individual_object_matching_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getIndividualByName_should_return_Individual_object_matching_name" duration-ms="2" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualByName_should_return_Individual_object_matching_name -->
-        <test-method status="PASS" signature="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name" duration-ms="1" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <exception class="com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException">
             <message>
               <![CDATA[Individual Object with Name=Individual By This Name Does Not Exist not found]]>
             </message>
             <full-stacktrace>
               <![CDATA[com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException: Individual Object with Name=Individual By This Name Does Not Exist not found
-	at com.qainfotech.tap.training.resourceio.TeamsYamlReader.getIndividualByName(TeamsYamlReader.java:148)
-	at com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest.getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name(TeamsYamlReaderTest.java:88)
+	at com.qainfotech.tap.training.resourceio.TeamsYamlReader.getIndividualByName(TeamsYamlReader.java:108)
+	at com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest.getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name(TeamsYamlReaderTest.java:85)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -279,19 +279,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name -->
-        <test-method status="PASS" signature="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects" duration-ms="9" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects" duration-ms="3" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects -->
-        <test-method status="PASS" signature="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects" duration-ms="0" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects" duration-ms="3" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects -->
-        <test-method status="PASS" signature="getListOfIndividuals_should_return_array_list_of_all_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getListOfIndividuals_should_return_array_list_of_all_individual_objects" duration-ms="29" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfIndividuals_should_return_array_list_of_all_individual_objects()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getListOfIndividuals_should_return_array_list_of_all_individual_objects" duration-ms="6" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfIndividuals_should_return_array_list_of_all_individual_objects -->
-        <test-method status="PASS" signature="getListOfTeams_should_return_a_list_if_Team_object_from_db_json()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@1d251891]" name="getListOfTeams_should_return_a_list_if_Team_object_from_db_json" duration-ms="24" started-at="2017-07-05T10:20:46Z" finished-at="2017-07-05T10:20:46Z">
+        <test-method status="PASS" signature="getListOfTeams_should_return_a_list_if_Team_object_from_db_json()[pri:0, instance:com.qainfotech.tap.training.resourceio.TeamsYamlReaderTest@43a25848]" name="getListOfTeams_should_return_a_list_if_Team_object_from_db_json" duration-ms="37" started-at="2017-07-05T11:15:36Z" finished-at="2017-07-05T11:15:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getListOfTeams_should_return_a_list_if_Team_object_from_db_json -->
