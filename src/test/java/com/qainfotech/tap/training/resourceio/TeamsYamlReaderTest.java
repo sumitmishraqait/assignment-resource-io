@@ -1,5 +1,6 @@
 package com.qainfotech.tap.training.resourceio;
 
+
 import com.qainfotech.tap.training.resourceio.exceptions.ObjectNotFoundException;
 import com.qainfotech.tap.training.resourceio.model.Individual;
 
@@ -13,13 +14,13 @@ import org.testng.annotations.Test;
  *
  * @author Ramandeep
  */
-public class TeamsJsonReaderTest {
+public class TeamsYamlReaderTest {
     
-    TeamsJsonReader teamReader;
+    TeamsYamlReader teamReader;
     
     @BeforeTest
     public void loadDB(){
-        teamReader = new TeamsJsonReader();
+        teamReader = new TeamsYamlReader();
     }
     
     @Test
@@ -38,18 +39,18 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects() throws FileNotFoundException, IOException{
+    public void getListOfActiveIndividuals_ahould_return_array_list_of_only_active_individual_objects() throws IOException{
         
-        assertThat(teamReader.getListOfActiveIndividuals().size()).isEqualTo(4);
+        assertThat(teamReader.getListOfActiveIndividuals().size()).isEqualTo(3);
         for(Individual individual:teamReader.getListOfActiveIndividuals()){
             assertThat(individual.isActive()).isTrue();
         }
     }
     
     @Test
-    public void getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects() throws FileNotFoundException, IOException{
+    public void getListOfInactiveIndividuals_should_return_array_list_of_only_inactive_individual_objects() throws IOException{
         
-        assertThat(teamReader.getListOfInactiveIndividuals().size()).isEqualTo(1);
+        assertThat(teamReader.getListOfInactiveIndividuals().size()).isEqualTo(2);
         for(Individual individual:teamReader.getListOfInactiveIndividuals()){
             assertThat(individual.isActive()).isFalse();
         }
@@ -58,15 +59,15 @@ public class TeamsJsonReaderTest {
     /* tests for getIndividualById(Integer id) */
     @Test
     public void getIndividualById_should_return_Individual_object_matching_id()
-            throws ObjectNotFoundException{
+            throws ObjectNotFoundException, IOException{
         
         assertThat(teamReader.getIndividualById(1202).getName())
                 .isEqualTo("Mark Twain");
     }
     
-    @Test(expectedExceptions = ObjectNotFoundException.class)
+    @Test(expectedExceptions = ObjectNotFoundException.class, expectedExceptionsMessageRegExp="Individual Object with id=100 not found")
     public void getIndividualById_should_throw_ObjectNotFoundException_for_incorrect_id()
-            throws ObjectNotFoundException{
+            throws ObjectNotFoundException, IOException{
         
         teamReader.getIndividualById(100);
     }
@@ -74,28 +75,28 @@ public class TeamsJsonReaderTest {
     /* tests for getIndividualByName(String name) */
     @Test
     public void getIndividualByName_should_return_Individual_object_matching_name()
-            throws ObjectNotFoundException{
+            throws ObjectNotFoundException, IOException{
         
         assertThat(teamReader.getIndividualByName("Speedy Gonzales").getId())
                 .isEqualTo(1203);
     }
     
-    @Test(expectedExceptions = ObjectNotFoundException.class)
+    @Test(expectedExceptions = ObjectNotFoundException.class, expectedExceptionsMessageRegExp="Individual Object with Name=Individual By This Name Does Not Exist not found")
     public void getIndividualByName_should_throw_ObjectNotFoundException_for_incorrect_name()
-            throws ObjectNotFoundException{
+            throws ObjectNotFoundException, IOException{
         
         teamReader.getIndividualByName("Individual By This Name Does Not Exist");
     }
     
     @Test
-    public void getListOfTeams_should_return_a_list_if_Team_object_from_db_json() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
+    public void getListOfTeams_should_return_a_list_if_Team_object_from_db_json() throws FileNotFoundException, IOException, NumberFormatException, ObjectNotFoundException{
         
         assertThat(teamReader.getListOfTeams().size()).isEqualTo(2);
         assertThat(teamReader.getListOfTeams().get(0).getId()).isEqualTo(1001);
         assertThat(teamReader.getListOfTeams().get(0).getName())
                 .isEqualTo("Kino");
         assertThat(teamReader.getListOfTeams().get(0).getMembers().size())
-                .isEqualTo(3);
+                .isEqualTo(2);
         assertThat(teamReader.getListOfTeams().get(1).getId()).isEqualTo(1002);
         assertThat(teamReader.getListOfTeams().get(1).getName())
                 .isEqualTo("B V Hammersmark");
@@ -104,22 +105,25 @@ public class TeamsJsonReaderTest {
     }
     
     @Test
-    public void Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
+    public void Team_getActiveMembers_should_return_a_list_of_team_members_that_are_active() throws FileNotFoundException, IOException, NumberFormatException, ObjectNotFoundException{
         assertThat(teamReader.getListOfTeams().get(0).getActiveMembers().size())
                 .isEqualTo(2);
         assertThat(teamReader.getListOfTeams().get(1).getActiveMembers().size())
-                .isEqualTo(3);
+                .isEqualTo(2);
     }
     
     @Test
-    public void Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive() throws NumberFormatException, FileNotFoundException, IOException, ObjectNotFoundException{
-        assertThat(teamReader.getListOfTeams().get(0).getInactiveMembers()
-                .size()).isEqualTo(1);
-        assertThat(teamReader.getListOfTeams().get(0).getInactiveMembers()
-                .get(0).getName()).isEqualTo("Mark Twain");
+    public void Team_getInactiveMembers_should_return_a_list_of_individual_team_members_that_are_inactive() throws FileNotFoundException, IOException, NumberFormatException, ObjectNotFoundException{
+       
+    	System.err.println("here  "+teamReader.getListOfTeams().get(0));
+    	
+    	assertThat(teamReader.getListOfTeams().get(0).getInactiveMembers()
+                .size()).isEqualTo(0);
         
         assertThat(teamReader.getListOfTeams().get(1).getInactiveMembers()
-                .size()).isEqualTo(0);
+                .size()).isEqualTo(1);
+        assertThat(teamReader.getListOfTeams().get(1).getInactiveMembers()
+                .get(0).getName()).isEqualTo("Duck Dodgers");
     }
     
 }

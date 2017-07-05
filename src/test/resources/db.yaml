@@ -1,0 +1,35 @@
+individuals:
+    -
+        id: 1201
+        name: John Doe
+        active: true
+    -
+        id: 1202
+        name: Mark Twain
+        active: false
+    -
+        id: 1203
+        name: Speedy Gonzales
+        active: true
+    -
+        id: 1204
+        name: Duck Dodgers
+        active: true
+    -
+        id: 1205
+        name: Duck Dodgers
+        active: false
+teams:
+    - 
+        id: 1001
+        name: Kino
+        members:
+            - 1201
+            - 1204
+    -
+        id: 1002
+        name: B V Hammersmark
+        members:
+            - 1203
+            - 1204
+            - 1205
